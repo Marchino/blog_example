@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
     def index
-        @articles = Article.published
+        @articles = Article.includes(:author).published
         respond_to do |format|
             format.html
             format.json do 
